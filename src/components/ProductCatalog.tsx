@@ -1,5 +1,6 @@
 'use client';
 
+import { IconFileText, IconMessageDots, IconShoppingCart } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -103,8 +104,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
       name: 'Metformin HCl 500 mg Film-Coated',
       category: 'chronic',
       categoryLabel: 'Perawatan Kronis',
-      indication:
-        'Terapi lini pertama untuk mengontrol kadar glukosa darah pada diabetes melitus tipe 2.',
+      indication: 'Terapi lini pertama untuk mengontrol kadar glukosa darah pada diabetes tipe 2.',
       bpomNumber: 'GKL0812345603A1',
       isPrescriptionRequired: true,
       price: 'Rp 18.000',
@@ -145,9 +145,9 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
   ];
 
   return (
-    <section id="katalog" className="bg-slate-50/50 py-16 lg:py-24">
+    <section id="katalog" className="bg-slate-50/50 py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header with Eyebrow (#2 of 3 allowed) */}
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex rounded-full bg-teal-100/70 px-3 py-1 text-xs font-bold tracking-wide text-teal-800 uppercase">
             {t('catalog_badge')}
@@ -161,7 +161,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
         </div>
 
         {/* Category Filters */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-2">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
             return (
@@ -171,9 +171,9 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                 onClick={() => {
                   setSelectedCategory(cat.id);
                 }}
-                className={`rounded-xl px-4 py-2 text-xs font-bold transition ${
+                className={`rounded-xl px-3.5 py-1.5 text-xs font-bold transition active:scale-[0.98] ${
                   isActive
-                    ? 'bg-teal-600 text-white shadow-sm shadow-teal-600/30'
+                    ? 'bg-teal-600 text-white shadow-xs shadow-teal-600/30'
                     : 'border border-slate-200 bg-white text-slate-600 hover:border-teal-300 hover:text-teal-800'
                 }`}
               >
@@ -188,7 +188,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
           {filteredProducts.map((prod) => (
             <div
               key={prod.id}
-              className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs transition duration-200 hover:border-teal-300 hover:shadow-md"
+              className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs transition duration-200 hover:border-teal-300 hover:shadow-md"
             >
               <div>
                 {/* Badges & Regulation */}
@@ -212,8 +212,8 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                   {prod.name}
                 </h3>
 
-                {/* Dosage & Packaging */}
-                <div className="mt-1 flex items-center gap-2 text-xs text-slate-500">
+                {/* Packaging */}
+                <div className="mt-1 text-xs text-slate-500">
                   <span>{prod.unit}</span>
                 </div>
 
@@ -224,16 +224,16 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
 
                 {/* Dosage instruction */}
                 <div className="mt-3 rounded-lg border border-slate-100 bg-slate-50 p-2 text-[11px] text-slate-600">
-                  <span className="font-semibold text-slate-700">Aturan Pakai: </span>
+                  <span className="font-semibold text-slate-700">Aturan: </span>
                   {prod.dosage}
                 </div>
               </div>
 
               {/* Price & Action Button */}
-              <div className="mt-5 border-t border-slate-100 pt-4">
+              <div className="mt-5 border-t border-slate-100 pt-3.5">
                 <div className="flex items-baseline justify-between">
                   <span className="text-xs text-slate-500">Harga Resmi:</span>
-                  <span className="text-lg font-extrabold text-teal-700">{prod.price}</span>
+                  <span className="text-base font-extrabold text-teal-700">{prod.price}</span>
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-2">
@@ -241,18 +241,9 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                     <button
                       type="button"
                       onClick={props.onOpenPrescriptionModal}
-                      className="col-span-2 flex items-center justify-center gap-1.5 rounded-lg bg-rose-600 py-2 text-xs font-bold text-white shadow-xs transition hover:bg-rose-700"
+                      className="col-span-2 flex items-center justify-center gap-1.5 rounded-lg bg-rose-600 py-2 text-xs font-bold text-white shadow-xs transition hover:bg-rose-700 active:scale-[0.98]"
                     >
-                      <svg
-                        className="size-3.5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                      </svg>
+                      <IconFileText className="size-3.5" stroke={2} />
                       <span>Tebus via Resep</span>
                     </button>
                   ) : (
@@ -261,17 +252,19 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                         href={`https://wa.me/6281234567890?text=Halo%20Apoteker%20Nyopharma,%20saya%20ingin%20memesan%20${encodeURIComponent(prod.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 rounded-lg bg-teal-600 py-2 text-center text-xs font-bold text-white shadow-xs transition hover:bg-teal-700"
+                        className="flex items-center justify-center gap-1 rounded-lg bg-teal-600 py-2 text-center text-xs font-bold text-white shadow-xs transition hover:bg-teal-700 active:scale-[0.98]"
                       >
-                        {t('product_btn_order')}
+                        <IconShoppingCart className="size-3.5" stroke={2} />
+                        <span>{t('product_btn_order')}</span>
                       </a>
                       <a
                         href={`https://wa.me/6281234567890?text=Halo%20Apoteker,%20saya%20ingin%20tanya%20indikasi%20dan%20dosis%20${encodeURIComponent(prod.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 rounded-lg border border-slate-200 bg-white py-2 text-center text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800"
+                        className="flex items-center justify-center gap-1 rounded-lg border border-slate-200 bg-white py-2 text-center text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800 active:scale-[0.98]"
                       >
-                        {t('product_btn_consult')}
+                        <IconMessageDots className="size-3.5" stroke={2} />
+                        <span>{t('product_btn_consult')}</span>
                       </a>
                     </>
                   )}

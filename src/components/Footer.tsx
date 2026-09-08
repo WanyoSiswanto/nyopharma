@@ -1,5 +1,6 @@
 'use client';
 
+import { IconPill } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/libs/I18nNavigation';
 import { AppConfig } from '@/utils/AppConfig';
@@ -15,31 +16,21 @@ export const Footer = () => {
           <div className="space-y-4 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 no-underline">
               <div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-400 font-bold text-slate-950">
-                <svg
-                  className="size-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 4v16m-8-8h16" />
-                </svg>
+                <IconPill className="size-6 text-slate-950" stroke={2} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-tight text-white">
+                <span className="text-xl leading-tight font-extrabold tracking-tight text-white">
                   NYO<span className="text-teal-400">PHARMA</span>
                 </span>
                 <span className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase">
-                  Apotek Digital Berizin Resmi
+                  Apotek Digital Berlisensi Resmi
                 </span>
               </div>
             </Link>
 
             <p className="text-xs leading-relaxed text-slate-400">
               Penyedia layanan farmasi digital dan apotek modern terpercaya yang memprioritaskan
-              keamanan pasien, ketepatan dosis klinis, dan integritas rantai pasok obat 100%
+              keselamatan pasien, ketepatan dosis klinis, dan integritas rantai pasok obat 100%
               original.
             </p>
 
@@ -126,7 +117,7 @@ export const Footer = () => {
 
               <div>
                 <span className="block font-semibold text-slate-300">Hotline Resep Darurat:</span>
-                <span className="font-bold text-white">0800-1-NYOPHARMA</span>
+                <span className="font-mono font-bold text-white">0800-1-NYOPHARMA</span>
               </div>
 
               <div>

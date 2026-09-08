@@ -20,7 +20,7 @@ export const Sponsors = () => (
           >
             <Image
               src={clerkLogo}
-              alt="Clerk – Authentication & User Management for Next.js"
+              alt="Clerk - Authentication & User Management for Next.js"
               width={220}
             />
           </a>
