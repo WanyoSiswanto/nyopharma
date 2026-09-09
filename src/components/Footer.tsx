@@ -152,16 +152,8 @@ export const Footer = () => {
             <p>
               © {new Date().getFullYear()} {AppConfig.name}. Seluruh hak cipta dilindungi.
             </p>
-            <p>
-              Didukung oleh{' '}
-              <a
-                href="https://nextjs-boilerplate.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 underline hover:text-teal-400"
-              >
-                Next.js Boilerplate
-              </a>
+            <p className="text-[11px] text-slate-500">
+              Sistem Pelayanan Farmasi Digital Berstandar Kemenkes RI
             </p>
           </div>
         </div>
