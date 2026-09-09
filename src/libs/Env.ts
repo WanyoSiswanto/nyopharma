@@ -11,8 +11,21 @@ export const Env = createEnv({
     NEXT_PUBLIC_APP_URL: z.string().optional(),
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().default('pk_test_placeholder'),
     NEXT_PUBLIC_LOGGING_LEVEL: z
-      .enum(['error', 'info', 'debug', 'warning', 'trace', 'fatal'])
-      .default('info'),
+      .string()
+      .optional()
+      .transform((val): 'error' | 'info' | 'debug' | 'warning' | 'trace' | 'fatal' => {
+        if (
+          val === 'error' ||
+          val === 'info' ||
+          val === 'debug' ||
+          val === 'warning' ||
+          val === 'trace' ||
+          val === 'fatal'
+        ) {
+          return val;
+        }
+        return 'info';
+      }),
     NEXT_PUBLIC_BETTER_STACK_SOURCE_TOKEN: z.string().optional(),
     NEXT_PUBLIC_BETTER_STACK_INGESTING_HOST: z.string().optional(),
     NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
