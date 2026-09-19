@@ -3,8 +3,7 @@ import type { KnipConfig } from 'knip';
 const config: KnipConfig = {
   // Files to exclude from Knip analysis
   ignore: ['src/libs/I18n.ts', 'src/types/I18n.ts'],
-  // Dependencies to ignore during analysis
-  ignoreDependencies: ['@clerk/shared'],
+  ignoreDependencies: ['@clerk/shared', 'lefthook'],
   // Include custom Playwright test file suffixes
   playwright: {
     entry: ['tests/**/*.@(integ|e2e).ts'],
