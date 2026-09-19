@@ -109,28 +109,47 @@ export const QuickServices = (props: QuickServicesProps) => {
           </p>
         </div>
 
-        {/* 4 Cards Grid with Asymmetric Accent */}
+        {/* 4 Cards Bento Grid with Primary Accent */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((svc) => (
-            <div
-              key={svc.title}
-              className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-2xs transition duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
-            >
-              <div>
-                <div className="flex items-center justify-between">
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-teal-50 transition group-hover:bg-teal-600 group-hover:text-white">
-                    {svc.icon}
+          {services.map((svc, idx) => {
+            const isPrimary = idx === 0;
+            return (
+              <div
+                key={svc.title}
+                className={`group relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
+                  isPrimary
+                    ? 'border-2 border-teal-500/30 bg-gradient-to-b from-teal-50/40 via-white to-white shadow-sm shadow-teal-900/5 hover:border-teal-500'
+                    : 'border border-slate-200/80 bg-white shadow-2xs hover:border-teal-300'
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div
+                      className={`flex size-11 items-center justify-center rounded-xl transition ${
+                        isPrimary
+                          ? 'bg-teal-600 text-white shadow-xs'
+                          : 'bg-teal-50 text-teal-700 group-hover:bg-teal-600 group-hover:text-white'
+                      }`}
+                    >
+                      {svc.icon}
+                    </div>
+                    <span
+                      className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold ${
+                        isPrimary
+                          ? 'border border-teal-200 bg-teal-100/70 text-teal-800'
+                          : 'bg-slate-100 text-slate-600'
+                      }`}
+                    >
+                      {svc.badge}
+                    </span>
                   </div>
-                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600">
-                    {svc.badge}
-                  </span>
+                  <h3 className="mt-4 text-base font-bold text-slate-900">{svc.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-600">{svc.desc}</p>
                 </div>
-                <h3 className="mt-4 text-base font-bold text-slate-900">{svc.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600">{svc.desc}</p>
+                <div>{svc.action}</div>
               </div>
-              <div>{svc.action}</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

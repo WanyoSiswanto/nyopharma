@@ -171,7 +171,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                 onClick={() => {
                   setSelectedCategory(cat.id);
                 }}
-                className={`rounded-xl px-3.5 py-1.5 text-xs font-bold transition active:scale-[0.98] ${
+                className={`cursor-pointer rounded-xl px-4 py-2 text-xs font-bold transition active:scale-[0.98] ${
                   isActive
                     ? 'bg-teal-600 text-white shadow-xs shadow-teal-600/30'
                     : 'border border-slate-200 bg-white text-slate-600 hover:border-teal-300 hover:text-teal-800'
@@ -188,7 +188,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
           {filteredProducts.map((prod) => (
             <div
               key={prod.id}
-              className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs transition duration-200 hover:border-teal-300 hover:shadow-md"
+              className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 shadow-2xs transition duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
             >
               <div>
                 {/* Badges & Regulation */}
@@ -233,7 +233,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
               <div className="mt-5 border-t border-slate-100 pt-3.5">
                 <div className="flex items-baseline justify-between">
                   <span className="text-xs text-slate-500">Harga Resmi:</span>
-                  <span className="text-base font-extrabold text-teal-700">{prod.price}</span>
+                  <span className="text-base font-extrabold text-teal-800">{prod.price}</span>
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-2">
@@ -241,7 +241,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                     <button
                       type="button"
                       onClick={props.onOpenPrescriptionModal}
-                      className="col-span-2 flex items-center justify-center gap-1.5 rounded-lg bg-rose-600 py-2 text-xs font-bold text-white shadow-xs transition hover:bg-rose-700 active:scale-[0.98]"
+                      className="col-span-2 flex cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-rose-600 py-2.5 text-xs font-bold text-white shadow-xs transition hover:bg-rose-700 active:scale-[0.98]"
                     >
                       <IconFileText className="size-3.5" stroke={2} />
                       <span>Tebus via Resep</span>
@@ -252,7 +252,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                         href={`https://wa.me/6281234567890?text=Halo%20Apoteker%20Nyopharma,%20saya%20ingin%20memesan%20${encodeURIComponent(prod.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 rounded-lg bg-teal-600 py-2 text-center text-xs font-bold text-white shadow-xs transition hover:bg-teal-700 active:scale-[0.98]"
+                        className="flex cursor-pointer items-center justify-center gap-1 rounded-xl bg-teal-600 py-2.5 text-center text-xs font-bold text-white shadow-xs transition hover:bg-teal-700 active:scale-[0.98]"
                       >
                         <IconShoppingCart className="size-3.5" stroke={2} />
                         <span>{t('product_btn_order')}</span>
@@ -261,7 +261,7 @@ export const ProductCatalog = (props: ProductCatalogProps) => {
                         href={`https://wa.me/6281234567890?text=Halo%20Apoteker,%20saya%20ingin%20tanya%20indikasi%20dan%20dosis%20${encodeURIComponent(prod.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 rounded-lg border border-slate-200 bg-white py-2 text-center text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800 active:scale-[0.98]"
+                        className="flex cursor-pointer items-center justify-center gap-1 rounded-xl border border-slate-200 bg-white py-2.5 text-center text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-800 active:scale-[0.98]"
                       >
                         <IconMessageDots className="size-3.5" stroke={2} />
                         <span>{t('product_btn_consult')}</span>

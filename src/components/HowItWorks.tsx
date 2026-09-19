@@ -45,21 +45,31 @@ export const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, idx) => (
-            <div key={step.num} className="relative flex flex-col items-center text-center">
-              {/* Step indicator circle */}
-              <div className="relative flex size-14 items-center justify-center rounded-2xl border border-teal-200 bg-teal-50 text-teal-700 shadow-xs transition hover:scale-105">
-                {step.icon}
-                <span className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-teal-700 text-[10px] font-bold text-white">
-                  {idx + 1}
-                </span>
-              </div>
+        <div className="relative mt-12">
+          {/* Connecting line on desktop */}
+          <div
+            className="absolute top-7 right-[10%] left-[10%] hidden h-0.5 bg-gradient-to-r from-teal-200 via-teal-300 to-teal-200 lg:block"
+            aria-hidden="true"
+          />
 
-              <h3 className="mt-4 text-sm font-bold text-slate-900 sm:text-base">{step.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">{step.desc}</p>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, idx) => (
+              <div key={step.num} className="relative z-10 flex flex-col items-center text-center">
+                {/* Step indicator circle */}
+                <div className="relative flex size-14 items-center justify-center rounded-2xl border-2 border-teal-200 bg-white text-teal-700 shadow-xs transition duration-200 hover:scale-105 hover:border-teal-400">
+                  {step.icon}
+                  <span className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-teal-700 text-[10px] font-bold text-white shadow-xs">
+                    {idx + 1}
+                  </span>
+                </div>
+
+                <h3 className="mt-4 text-sm font-bold text-slate-900 sm:text-base">{step.title}</h3>
+                <p className="mt-2 max-w-[28ch] text-xs leading-relaxed text-slate-600">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

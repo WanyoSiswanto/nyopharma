@@ -109,7 +109,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 setPatientName(e.target.value);
               }}
               placeholder="cth: Bpk. Hendra Gunawan"
-              className="mt-1.5 w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 focus:outline-hidden"
+              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-3 focus:ring-teal-500/15 focus:outline-hidden"
             />
           </div>
 
@@ -127,7 +127,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 setPatientPhone(e.target.value);
               }}
               placeholder="cth: 081234567890"
-              className="mt-1.5 w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 focus:outline-hidden"
+              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-3 focus:ring-teal-500/15 focus:outline-hidden"
             />
           </div>
 
@@ -138,7 +138,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
             </span>
             <label
               htmlFor="prescription-file"
-              className="flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-teal-200 bg-teal-50/40 p-5 text-center transition hover:border-teal-400 hover:bg-teal-50 active:scale-[0.99]"
+              className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-teal-200/90 bg-teal-50/40 p-6 text-center transition hover:border-teal-400 hover:bg-teal-50/70 active:scale-[0.99]"
             >
               <IconUpload className="size-8 text-teal-600" stroke={1.5} />
               <span className="mt-2 text-xs font-semibold text-teal-900">
@@ -170,12 +170,12 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 setPatientNotes(e.target.value);
               }}
               placeholder="Alergi obat atau permintaan sediaan khusus (opsional)"
-              className="mt-1.5 w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 focus:outline-hidden"
+              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-3 focus:ring-teal-500/15 focus:outline-hidden"
             />
           </div>
 
           {/* Privacy Note */}
-          <div className="flex items-start gap-2 rounded-lg bg-slate-50 p-2.5 text-[11px] text-slate-600">
+          <div className="flex items-start gap-2 rounded-xl bg-slate-50 p-3 text-[11px] text-slate-600">
             <IconLock className="size-4 shrink-0 text-teal-700" stroke={1.75} />
             <span>{t('rx_privacy_notice')}</span>
           </div>
@@ -184,7 +184,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 py-3 text-xs font-bold text-white shadow-md shadow-teal-700/20 transition hover:bg-teal-700 active:scale-[0.98] disabled:opacity-50"
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-teal-600 py-3 text-xs font-bold text-white shadow-sm shadow-teal-700/20 transition hover:bg-teal-700 active:scale-[0.98] disabled:opacity-50"
           >
             {isSubmitting ? (
               <span>Mengunggah Resep ke Apoteker...</span>
@@ -212,7 +212,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
     <section id="resep" className="bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12">
-          {/* Left Column: Asymmetric info with real lab photograph */}
+          {/* Left Column: Asymmetric info with real lab photograph and validation checklist */}
           <div className="space-y-6 lg:col-span-6">
             <div>
               <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
@@ -223,6 +223,28 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 segera melakukan verifikasi dosis, memeriksa interaksi obat, dan mengemas obat
                 bersegel khusus.
               </p>
+            </div>
+
+            {/* Checklist Validity points */}
+            <div className="space-y-2.5 rounded-2xl border border-slate-100 bg-slate-50/60 p-4">
+              <div className="flex items-center gap-2.5 text-xs text-slate-700">
+                <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-700">
+                  ✓
+                </span>
+                <span>Nama dokter, nomor SIP, dan instrumen resep resmi terbaca</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-slate-700">
+                <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-700">
+                  ✓
+                </span>
+                <span>Tanggal penulisan resep masih dalam masa berlaku (maks 30 hari)</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-slate-700">
+                <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-700">
+                  ✓
+                </span>
+                <span>Nama obat, dosis, dan instruksi minum tercantum jelas</span>
+              </div>
             </div>
 
             {/* Real Clinical Inspection Photography */}

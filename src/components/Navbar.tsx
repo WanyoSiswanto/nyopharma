@@ -44,61 +44,61 @@ export const Navbar = (props: NavbarProps) => {
       </div>
 
       {/* Main navigation bar */}
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-18 lg:px-8">
         {/* Brand Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-3 no-underline">
-          <div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-tr from-teal-700 to-emerald-500 text-white shadow-sm shadow-teal-700/25">
-            <IconPill className="size-6" stroke={1.75} />
+          <div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-teal-700 to-emerald-500 text-white shadow-sm shadow-teal-700/25 sm:size-10">
+            <IconPill className="size-5 sm:size-6" stroke={1.75} />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl leading-none font-black tracking-tight text-slate-900">
+            <span className="text-lg leading-none font-black tracking-tight text-slate-900 sm:text-xl">
               NYO<span className="text-teal-600">PHARMA</span>
             </span>
-            <span className="mt-1 text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+            <span className="mt-1 text-[9px] font-bold tracking-widest text-slate-500 uppercase sm:text-[10px]">
               Apotek Digital Berlisensi
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links (Clean, Proportional & Centered) */}
-        <nav className="hidden items-center gap-6 lg:flex xl:gap-8" aria-label={t('home_link')}>
+        <nav className="hidden items-center gap-1.5 lg:flex xl:gap-2" aria-label={t('home_link')}>
           <a
             href="#layanan"
-            className="text-sm font-medium whitespace-nowrap text-slate-600 transition hover:text-teal-700"
+            className="rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-slate-600 transition hover:bg-slate-100 hover:text-teal-800 xl:text-sm"
           >
             {t('services_link')}
           </a>
           <a
             href="#katalog"
-            className="text-sm font-medium whitespace-nowrap text-slate-600 transition hover:text-teal-700"
+            className="rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-slate-600 transition hover:bg-slate-100 hover:text-teal-800 xl:text-sm"
           >
             {t('products_link')}
           </a>
           <a
             href="#keamanan"
-            className="text-sm font-medium whitespace-nowrap text-slate-600 transition hover:text-teal-700"
+            className="rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-slate-600 transition hover:bg-slate-100 hover:text-teal-800 xl:text-sm"
           >
             {t('safety_link')}
           </a>
           <a
             href="#apoteker"
-            className="text-sm font-medium whitespace-nowrap text-slate-600 transition hover:text-teal-700"
+            className="rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-slate-600 transition hover:bg-slate-100 hover:text-teal-800 xl:text-sm"
           >
             {t('pharmacists_link')}
           </a>
           <a
             href="#faq"
-            className="text-sm font-medium whitespace-nowrap text-slate-600 transition hover:text-teal-700"
+            className="rounded-lg px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-slate-600 transition hover:bg-slate-100 hover:text-teal-800 xl:text-sm"
           >
             {t('faq_link')}
           </a>
         </nav>
 
         {/* Desktop Right Actions (Structured & Balanced) */}
-        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
           <LocaleSwitcher />
 
-          <div className="h-5 w-px shrink-0 bg-slate-200" aria-hidden="true" />
+          <div className="h-4 w-px shrink-0 bg-slate-200" aria-hidden="true" />
 
           <Link
             href="/sign-in/"
@@ -112,7 +112,7 @@ export const Navbar = (props: NavbarProps) => {
             href="https://wa.me/6281234567890?text=Halo%20Apoteker%20Nyopharma,%20saya%20ingin%20konsultasi%20obat"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-teal-200/90 bg-teal-50/70 px-3.5 py-2 text-xs font-bold whitespace-nowrap text-teal-800 transition hover:bg-teal-100 active:scale-[0.98]"
+            className="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl border border-teal-200/90 bg-teal-50/70 px-3 py-1.5 text-xs font-bold whitespace-nowrap text-teal-800 transition hover:bg-teal-100 active:scale-[0.98]"
           >
             <IconMessageDots className="size-4 text-teal-700" stroke={1.75} />
             <span>{t('cta_chat_pharmacist')}</span>
@@ -121,7 +121,7 @@ export const Navbar = (props: NavbarProps) => {
           <button
             type="button"
             onClick={props.onOpenPrescriptionModal}
-            className="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-teal-700 px-4 py-2 text-xs font-bold whitespace-nowrap text-white shadow-sm shadow-teal-700/25 transition hover:bg-teal-800 active:scale-[0.98]"
+            className="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl bg-teal-700 px-3.5 py-1.5 text-xs font-bold whitespace-nowrap text-white shadow-xs shadow-teal-700/25 transition hover:bg-teal-800 active:scale-[0.98]"
           >
             <IconFileText className="size-4" stroke={1.75} />
             <span>{t('cta_upload_rx')}</span>

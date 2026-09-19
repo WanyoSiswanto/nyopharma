@@ -92,7 +92,7 @@ export const PharmacistTeam = () => {
                 href={`https://wa.me/6281234567890?text=Halo%20${encodeURIComponent(leadPharmacist.name)},%20saya%20ingin%20konsultasi%20obat`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 py-3 text-xs font-bold text-white shadow-sm transition hover:bg-teal-700 active:scale-[0.98]"
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-teal-600 py-3 text-xs font-bold text-white shadow-sm transition hover:bg-teal-700 active:scale-[0.98]"
               >
                 <IconMessageDots className="size-4" stroke={1.75} />
                 <span>Konsultasi Langsung dengan APJ</span>
@@ -105,7 +105,7 @@ export const PharmacistTeam = () => {
             {specialists.map((spec) => (
               <div
                 key={spec.name}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-2xs transition hover:border-teal-300 hover:shadow-md"
+                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-2xs transition duration-200 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between">
@@ -134,7 +134,7 @@ export const PharmacistTeam = () => {
                     href={`https://wa.me/6281234567890?text=Halo%20${encodeURIComponent(spec.name)},%20saya%20ingin%20konsultasi%20obat`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 hover:text-teal-900 active:scale-[0.98]"
+                    className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-bold text-teal-700 hover:text-teal-900 active:scale-[0.98]"
                   >
                     <IconMessageDots className="size-3.5" stroke={1.75} />
                     <span>Chat {spec.name.split(' ')[1]}</span>
