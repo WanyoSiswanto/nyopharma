@@ -1,6 +1,6 @@
-import { SignOutButton } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { LogoutButton } from '@/components/auth/LogoutButton';
 import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 import { Link } from '@/libs/I18nNavigation';
 import { BaseTemplate } from '@/templates/BaseTemplate';
@@ -36,14 +36,17 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
       leftNav={
         <>
           <li>
-            <Link href="/dashboard/" className="border-none text-gray-700 hover:text-gray-900">
+            <Link
+              href="/dashboard/"
+              className="border-none font-semibold text-gray-700 hover:text-gray-900"
+            >
               {t('dashboard_link')}
             </Link>
           </li>
           <li>
             <Link
               href="/dashboard/user-profile/"
-              className="border-none text-gray-700 hover:text-gray-900"
+              className="border-none font-semibold text-gray-700 hover:text-gray-900"
             >
               {t('user_profile_link')}
             </Link>
@@ -53,11 +56,7 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
       rightNav={
         <>
           <li>
-            <SignOutButton>
-              <button className="border-none text-gray-700 hover:text-gray-900" type="button">
-                {t('sign_out')}
-              </button>
-            </SignOutButton>
+            <LogoutButton locale={locale} label={t('sign_out')} />
           </li>
 
           <li>

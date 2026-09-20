@@ -15,12 +15,12 @@ export const Footer = () => {
           {/* Col 1 & 2: Brand & Accreditations */}
           <div className="space-y-4 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 no-underline">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-400 font-bold text-slate-950">
+              <div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-600 to-emerald-400 font-bold text-slate-950">
                 <IconPill className="size-6 text-slate-950" stroke={2} />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl leading-tight font-extrabold tracking-tight text-white">
-                  NYO<span className="text-teal-400">PHARMA</span>
+                  NYO<span className="text-emerald-400">PHARMA</span>
                 </span>
                 <span className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase">
                   Apotek Digital Berlisensi Resmi
@@ -35,7 +35,7 @@ export const Footer = () => {
             </p>
 
             <div className="space-y-1.5 rounded-xl border border-slate-800 bg-slate-900/80 p-3.5 font-mono text-[11px] text-slate-300">
-              <div className="font-bold text-teal-400">Izin Operasional Apotek:</div>
+              <div className="font-bold text-emerald-400">Izin Operasional Apotek:</div>
               <div>SIA: 503/048/SIA/DPMPTSP/2024</div>
               <div>SIPA APJ: 19920815/SIPA_32.73/2021/2004</div>
               <div>Izin Edar Farmasi Kemenkes RI Terverifikasi</div>
@@ -47,27 +47,27 @@ export const Footer = () => {
             <h3 className="text-xs font-bold tracking-wider text-white uppercase">Layanan Utama</h3>
             <ul className="mt-4 space-y-2.5 text-xs">
               <li>
-                <a href="#resep" className="transition hover:text-teal-400">
+                <a href="#resep" className="transition hover:text-emerald-400">
                   Tebus Resep Dokter
                 </a>
               </li>
               <li>
-                <a href="#layanan" className="transition hover:text-teal-400">
+                <a href="#layanan" className="transition hover:text-emerald-400">
                   Konsultasi Apoteker 24 Jam
                 </a>
               </li>
               <li>
-                <a href="#katalog" className="transition hover:text-teal-400">
+                <a href="#katalog" className="transition hover:text-emerald-400">
                   Katalog Obat & Vitamin
                 </a>
               </li>
               <li>
-                <a href="#layanan" className="transition hover:text-teal-400">
+                <a href="#layanan" className="transition hover:text-emerald-400">
                   Langganan Obat Rutin & Kronis
                 </a>
               </li>
               <li>
-                <a href="#keamanan" className="transition hover:text-teal-400">
+                <a href="#keamanan" className="transition hover:text-emerald-400">
                   Standar Distribusi CDOB
                 </a>
               </li>
@@ -79,27 +79,27 @@ export const Footer = () => {
             <h3 className="text-xs font-bold tracking-wider text-white uppercase">Pusat Bantuan</h3>
             <ul className="mt-4 space-y-2.5 text-xs">
               <li>
-                <Link href="/about/" className="transition hover:text-teal-400">
+                <Link href="/about/" className="transition hover:text-emerald-400">
                   {tRoot('about_link')}
                 </Link>
               </li>
               <li>
-                <a href="#faq" className="transition hover:text-teal-400">
+                <a href="#faq" className="transition hover:text-emerald-400">
                   {tRoot('faq_link')}
                 </a>
               </li>
               <li>
-                <a href="#keamanan" className="transition hover:text-teal-400">
+                <a href="#keamanan" className="transition hover:text-emerald-400">
                   Jaminan Keaslian BPOM
                 </a>
               </li>
               <li>
-                <a href="#apoteker" className="transition hover:text-teal-400">
+                <a href="#apoteker" className="transition hover:text-emerald-400">
                   {tRoot('pharmacists_link')}
                 </a>
               </li>
               <li>
-                <a href="#resep" className="transition hover:text-teal-400">
+                <a href="#resep" className="transition hover:text-emerald-400">
                   Kebijakan Privasi Medis
                 </a>
               </li>
@@ -126,7 +126,7 @@ export const Footer = () => {
                   href="https://wa.me/6281234567890"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-teal-400 hover:underline"
+                  className="font-mono text-emerald-400 hover:underline"
                 >
                   +62 812-3456-7890
                 </a>

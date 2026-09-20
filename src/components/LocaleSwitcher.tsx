@@ -31,7 +31,7 @@ export const LocaleSwitcher = () => {
       <select
         defaultValue={locale}
         onChange={handleChange}
-        className="cursor-pointer appearance-none rounded-lg border border-slate-200 bg-slate-50/80 py-1.5 pr-6 pl-7 text-xs font-semibold text-slate-700 transition hover:border-teal-300 hover:bg-white focus:border-teal-500 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-teal-500/20"
+        className="cursor-pointer appearance-none rounded-lg border border-slate-200 bg-slate-50/80 py-1.5 pr-6 pl-7 text-xs font-semibold text-slate-700 transition hover:border-emerald-300 hover:bg-white focus:border-emerald-600 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-500/20"
         aria-label={t('change_language')}
       >
         {routing.locales.map((elt) => (

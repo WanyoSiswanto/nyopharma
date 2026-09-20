@@ -16,25 +16,25 @@ export const TrustAndSafety = () => {
       title: t('safety_card1_title'),
       desc: t('safety_card1_desc'),
       tag: 'Protokol Klinis',
-      icon: <IconChecklist className="size-6 text-teal-700" stroke={1.75} />,
+      icon: <IconChecklist className="size-6 text-emerald-700" stroke={1.75} />,
     },
     {
       title: t('safety_card2_title'),
       desc: t('safety_card2_desc'),
       tag: 'Standar CDOB',
-      icon: <IconTemperature className="size-6 text-teal-700" stroke={1.75} />,
+      icon: <IconTemperature className="size-6 text-emerald-700" stroke={1.75} />,
     },
     {
       title: t('safety_card3_title'),
       desc: t('safety_card3_desc'),
       tag: 'Distribusi Resmi',
-      icon: <IconShieldCheck className="size-6 text-teal-700" stroke={1.75} />,
+      icon: <IconShieldCheck className="size-6 text-emerald-700" stroke={1.75} />,
     },
     {
       title: t('safety_card4_title'),
       desc: t('safety_card4_desc'),
       tag: 'Enkripsi & Privasi',
-      icon: <IconLockSquare className="size-6 text-teal-700" stroke={1.75} />,
+      icon: <IconLockSquare className="size-6 text-emerald-700" stroke={1.75} />,
     },
   ];
 
@@ -54,14 +54,14 @@ export const TrustAndSafety = () => {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-2xs transition hover:border-teal-300 hover:shadow-md"
+              className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-2xs transition hover:border-emerald-300 hover:shadow-md"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <div className="flex size-11 items-center justify-center rounded-xl border border-teal-100 bg-teal-50 text-teal-700">
+                  <div className="flex size-11 items-center justify-center rounded-xl border border-emerald-100 bg-emerald-50 text-emerald-700">
                     {pillar.icon}
                   </div>
-                  <span className="rounded-md border border-teal-200 bg-teal-50 px-2 py-0.5 text-[10px] font-bold text-teal-800">
+                  <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-800">
                     {pillar.tag}
                   </span>
                 </div>

@@ -66,7 +66,7 @@ export const FaqSection = () => {
                     {faq.q}
                   </span>
                   <span
-                    className={`flex size-7 shrink-0 items-center justify-center rounded-full bg-teal-100/70 text-teal-800 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    className={`flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-100/80 text-emerald-800 transition-transform ${isOpen ? 'rotate-180' : ''}`}
                   >
                     <IconChevronDown className="size-4" stroke={2} />
                   </span>

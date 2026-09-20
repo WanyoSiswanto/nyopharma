@@ -57,7 +57,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
   };
 
   const formContent = (
-    <div className="relative rounded-2xl border border-teal-100 bg-white p-6 shadow-xl sm:p-8">
+    <div className="relative rounded-2xl border border-emerald-100/80 bg-white p-6 shadow-xl sm:p-8">
       {props.isModal && (
         <button
           type="button"
@@ -82,7 +82,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
             <button
               type="button"
               onClick={handleReset}
-              className="rounded-xl bg-teal-600 px-6 py-2.5 text-xs font-bold text-white shadow-md hover:bg-teal-700 active:scale-[0.98]"
+              className="rounded-xl bg-emerald-700 px-6 py-2.5 text-xs font-bold text-white shadow-md hover:bg-emerald-800 active:scale-[0.98]"
             >
               {t('rx_btn_close')}
             </button>
@@ -109,7 +109,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 setPatientName(e.target.value);
               }}
               placeholder="cth: Bpk. Hendra Gunawan"
-              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-3 focus:ring-teal-500/15 focus:outline-hidden"
+              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:ring-3 focus:ring-emerald-500/15 focus:outline-hidden"
             />
           </div>
 
@@ -127,7 +127,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 setPatientPhone(e.target.value);
               }}
               placeholder="cth: 081234567890"
-              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-3 focus:ring-teal-500/15 focus:outline-hidden"
+              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:ring-3 focus:ring-emerald-500/15 focus:outline-hidden"
             />
           </div>
 
@@ -138,10 +138,10 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
             </span>
             <label
               htmlFor="prescription-file"
-              className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-teal-200/90 bg-teal-50/40 p-6 text-center transition hover:border-teal-400 hover:bg-teal-50/70 active:scale-[0.99]"
+              className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-emerald-200/90 bg-emerald-50/40 p-6 text-center transition hover:border-emerald-400 hover:bg-emerald-50/70 active:scale-[0.99]"
             >
-              <IconUpload className="size-8 text-teal-600" stroke={1.5} />
-              <span className="mt-2 text-xs font-semibold text-teal-900">
+              <IconUpload className="size-8 text-emerald-700" stroke={1.5} />
+              <span className="mt-2 text-xs font-semibold text-emerald-950">
                 {selectedFile ? `File: ${selectedFile.name}` : t('rx_upload_dropzone')}
               </span>
               <span className="mt-1 text-[10px] text-slate-400">
@@ -170,13 +170,13 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                 setPatientNotes(e.target.value);
               }}
               placeholder="Alergi obat atau permintaan sediaan khusus (opsional)"
-              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:ring-3 focus:ring-teal-500/15 focus:outline-hidden"
+              className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white focus:ring-3 focus:ring-emerald-500/15 focus:outline-hidden"
             />
           </div>
 
           {/* Privacy Note */}
           <div className="flex items-start gap-2 rounded-xl bg-slate-50 p-3 text-[11px] text-slate-600">
-            <IconLock className="size-4 shrink-0 text-teal-700" stroke={1.75} />
+            <IconLock className="size-4 shrink-0 text-emerald-700" stroke={1.75} />
             <span>{t('rx_privacy_notice')}</span>
           </div>
 
@@ -184,7 +184,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-teal-600 py-3 text-xs font-bold text-white shadow-sm shadow-teal-700/20 transition hover:bg-teal-700 active:scale-[0.98] disabled:opacity-50"
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-emerald-700 py-3 text-xs font-bold text-white shadow-sm shadow-emerald-700/20 transition hover:bg-emerald-800 active:scale-[0.98] disabled:opacity-50"
           >
             {isSubmitting ? (
               <span>Mengunggah Resep ke Apoteker...</span>
@@ -263,7 +263,7 @@ export const PrescriptionUploadCard = (props: PrescriptionUploadProps) => {
                     <IconShieldCheck className="size-4 text-emerald-400" stroke={2} />
                     <span>Skrining Resep Ganda & Sterilitas Terjaga</span>
                   </div>
-                  <span className="flex items-center gap-1 text-[11px] text-teal-200">
+                  <span className="flex items-center gap-1 text-[11px] text-emerald-200">
                     <IconClock className="size-3.5" stroke={2} /> 5-10 Menit
                   </span>
                 </div>
